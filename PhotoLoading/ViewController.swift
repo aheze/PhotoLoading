@@ -57,7 +57,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         let asset = allPhotos![indexPath.item]
         let photosURL = NSURL.sd_URL(with: asset)
-        cell.imageView.sd_setImage(with: photosURL as URL?, placeholderImage: nil, options: SDWebImageOptions.fromLoaderOnly)
+        cell.imageView.sd_setImage(with: photosURL as URL?, placeholderImage: nil, options: SDWebImageOptions.fromLoaderOnly, context: [SDWebImageContextOption.storeCacheType: SDImageCacheType.none.rawValue])
         return cell
     }
 }
