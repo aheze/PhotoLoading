@@ -29,19 +29,18 @@ class ViewController: UIViewController {
         SDWebImageManager.defaultImageLoader = SDImageLoadersManager.shared
         
         let options = PHImageRequestOptions()
-        options.sd_targetSize = CGSize(width: 500, height: 500)
-        
+        options.sd_targetSize = CGSize(width: 500, height: 500) /// make sure don't load too big
         SDImagePhotosLoader.shared.imageRequestOptions = options
         
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        PHPhotoLibrary.requestAuthorization { (status) in
+        PHPhotoLibrary.requestAuthorization { (status) in /// request access
             if status == .authorized {
                 let fetchOptions = PHFetchOptions()
                 self.allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
                 DispatchQueue.main.async {
-                    self.collectionView.reloadData()
+                    self.collectionView.reloadData() /// reload collectionview once done
                 }
             }
         }
