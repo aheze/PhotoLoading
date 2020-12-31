@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-PhotoLoading/Pods-PhotoLoading-frameworks.sh
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SDWebImagePhotosPlugin/SDWebImagePhotosPlugin.framework
